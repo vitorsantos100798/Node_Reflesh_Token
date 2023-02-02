@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import jwt from "jsonwebtoken";
-import { stringify } from "querystring";
 import auth from "../config/auth";
 import { RefleshTokenRepositories } from "../repositories/RefleshToken.Repositorie";
 type JwtasPayload = {
@@ -14,11 +13,11 @@ export class RefleshTokenService {
       expires_in_refresh_token,
       expires_refresh_token_days,
     } = auth;
-
     const { email, sub } = jwt.verify(
       refleshToken,
       secret_refresh_token
     ) as JwtasPayload;
+    console.log("Log", email);
 
     const id = sub;
 

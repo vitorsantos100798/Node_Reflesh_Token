@@ -1,5 +1,5 @@
 version: '3'
-services: 
+services:
     db:
         image: 'postgres:latest'
         environment:
@@ -10,4 +10,3 @@ services:
             - ./pgdata:/var/lib/postgresql/data
         ports:
             - "5432:5432"
-    

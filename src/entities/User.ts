@@ -22,5 +22,5 @@ export class User {
   password: string;
 
   @OneToMany(() => RefleshToken, (type) => type.user)
-  token_user: RefleshToken[];
+  token_user?: RefleshToken[];
 }
